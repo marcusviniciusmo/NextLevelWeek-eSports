@@ -2,8 +2,8 @@ import express from 'express';
 
 const app = express();
 
-app.get('/ads', () => {
-  console.log('Acessou Ads!');
+app.get('/ads', (request, response) => {
+  return response.send('Acessou Ads!');
 });
 
 app.listen(3333);
