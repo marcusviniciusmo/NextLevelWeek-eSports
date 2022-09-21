@@ -1,2 +1,5 @@
 // Create a Node Project
 npm init -y
+
+// Intall Express dependency
+npm install express
