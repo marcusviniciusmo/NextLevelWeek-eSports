@@ -6,3 +6,6 @@ npm install express
 
 // Install TypeScript
 npm i typescript
+
+// Install TypeScript in development environment
+npm i typescript -D
