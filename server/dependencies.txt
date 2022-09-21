@@ -3,3 +3,6 @@ npm init -y
 
 // Intall Express dependency
 npm install express
+
+// Install TypeScript
+npm i typescript
