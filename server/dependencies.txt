@@ -9,3 +9,6 @@ npm i typescript
 
 // Install TypeScript in development environment
 npm i typescript -D
+
+// Create a config TS file
+npx tsc --init
