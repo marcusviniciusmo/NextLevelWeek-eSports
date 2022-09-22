@@ -15,3 +15,6 @@ npx tsc --init
 
 // Added @types to Express
 npm install @types/express -D
+
+// Install ts-node-dev
+npm i ts-node-dev -D
