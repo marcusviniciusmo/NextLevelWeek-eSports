@@ -12,3 +12,6 @@ npm i typescript -D
 
 // Create a config TS file
 npx tsc --init
+
+// Added @types to Express
+npm install @types/express -D
