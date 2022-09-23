@@ -7,7 +7,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        galaxy: "url('./backgroundGalaxy.png')"
+        galaxy: "url('./backgroundGalaxy.png')",
+        'nlw-gradient': 'linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%)'
       }
     },
   },
