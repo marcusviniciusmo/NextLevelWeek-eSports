@@ -3,7 +3,7 @@ import './styles/main.css';
 
 function App() {
   return (
-    <div>
+    <div className='max-w-[1344px] mx-auto flex flex-col items-center my-20'>
       <img src={LogoImage} alt="Logo NLW eSports" />
     </div>
   );
