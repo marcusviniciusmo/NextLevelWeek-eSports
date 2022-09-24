@@ -3,3 +3,6 @@ expo init mobile
 
 // Font Inter
 expo install expo-font @expo-google-fonts/inter
+
+// Safe Area Context (React-Navigation)
+expo install react-native-safe-area-context
