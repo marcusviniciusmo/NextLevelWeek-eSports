@@ -1,0 +1,5 @@
+// Create Mobile Project
+expo init mobile
+
+// Font Inter
+expo install expo-font @expo-google-fonts/inter
