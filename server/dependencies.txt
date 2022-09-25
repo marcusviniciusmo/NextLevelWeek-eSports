@@ -21,3 +21,6 @@ npm i ts-node-dev -D
 
 // Install Prisma
 npm i prisma -D
+
+// Prisma dependency with SQLite Database
+npx prisma init --datasource-provider SQLite
