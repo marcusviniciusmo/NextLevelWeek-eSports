@@ -1,9 +1,14 @@
-import { View, Text } from 'react-native';
+import { View, Image } from 'react-native';
+import { styles } from './styles';
+import Logo from '../../assets/logo-nlw-esports.png';
 
 export function Home() {
   return (
-    <View>
-      <Text>HOME</Text>
+    <View style={styles.container}>
+      <Image
+        source={Logo}
+        style={styles.logo}
+      />
     </View>
   );
 };
