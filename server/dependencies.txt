@@ -24,3 +24,6 @@ npm i prisma -D
 
 // Prisma dependency with SQLite Database
 npx prisma init --datasource-provider SQLite
+
+// Prisma client
+npm i @prisma/client
