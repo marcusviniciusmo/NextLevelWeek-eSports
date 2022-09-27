@@ -27,3 +27,7 @@ npx prisma init --datasource-provider SQLite
 
 // Prisma client
 npm i @prisma/client
+
+// Cors
+npm i cors
+npm install @types/cors -D
