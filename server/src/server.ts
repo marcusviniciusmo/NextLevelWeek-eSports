@@ -1,6 +1,9 @@
-import express, { query } from 'express';
+import express from 'express';
 import { PrismaClient } from '@prisma/client';
-import { convertHourStringToMinutes } from './utils/Functions';
+import {
+  convertHourStringToMinutes,
+  convertMinutesToHourString
+} from './utils/Functions';
 
 const app = express();
 app.use(express.json());
@@ -44,7 +47,7 @@ app.post('/games/:gameId/ads', async (request, response) => {
 });
 
 app.get('/games/:id/ads', async (request, response) => {
-  const gameId = request.params.id;
+  const gameId: any = request.params.id;
 
   const ads = await prisma.ad.findMany({
     select: {
@@ -67,7 +70,9 @@ app.get('/games/:id/ads', async (request, response) => {
   return response.json(ads.map(ad => {
     return {
       ...ad,
-      weekDays: ad.weekDays.split(',')
+      weekDays: ad.weekDays.split(','),
+      hourStart: convertMinutesToHourString(ad.hourStart),
+      hourEnd: convertMinutesToHourString(ad.hourEnd)
     }
   }));
 });
