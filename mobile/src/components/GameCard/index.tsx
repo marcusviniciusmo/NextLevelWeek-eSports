@@ -26,13 +26,13 @@ export function GameCard({ data, ...rest }: Props) {
     <TouchableOpacity style={styles.container} {...rest}>
       <ImageBackground
         source={{ uri: data.bannerUrl }}
-        style={styles.cover}
+        style={styles.bannerUrl}
       >
         <LinearGradient
           colors={THEME.COLORS.FOOTER}
           style={styles.footer}
         >
-          <Text style={styles.name}>{data.title}</Text>
+          <Text style={styles.title}>{data.title}</Text>
           <Text style={styles.ads}>{data._count.ads} anúncios</Text>
         </LinearGradient>
       </ImageBackground>
