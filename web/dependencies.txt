@@ -8,3 +8,6 @@ npx tailwindcss init -p
 
 // Phosphor Icons
 npm i phosphor-react
+
+// Radix-UI Dialog
+npm install @radix-ui/react-dialog
