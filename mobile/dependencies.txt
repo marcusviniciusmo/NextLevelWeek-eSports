@@ -9,3 +9,7 @@ expo install react-native-safe-area-context
 
 // Linear Gradient
 expo install expo-linear-gradient
+
+// React Navigation
+npm install @react-navigation/native
+expo install react-native-screens
