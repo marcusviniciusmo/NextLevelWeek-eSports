@@ -13,3 +13,6 @@ expo install expo-linear-gradient
 // React Navigation
 npm install @react-navigation/native
 expo install react-native-screens
+
+// React Navigation - Stack
+npm install @react-navigation/native-stack
