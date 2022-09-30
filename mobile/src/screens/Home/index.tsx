@@ -1,6 +1,7 @@
-import { View, Image, FlatList } from 'react-native';
+import { Image, FlatList } from 'react-native';
 import { useEffect, useState } from 'react';
 import { Background } from '../../components/Background';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Heading } from '../../components/Heading';
 import { GameCard, GameCardProps } from '../../components/GameCard';
 import { styles } from './styles';
@@ -17,7 +18,7 @@ export function Home() {
 
   return (
     <Background>
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <Image
           source={Logo}
           style={styles.logo}
@@ -40,7 +41,7 @@ export function Home() {
           horizontal
           contentContainerStyle={styles.contentList}
         />
-      </View>
+      </SafeAreaView>
     </Background>
   );
 };
