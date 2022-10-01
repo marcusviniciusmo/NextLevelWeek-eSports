@@ -19,8 +19,8 @@ export function Home() {
       .then(data => setGames(data));
   }, []);
 
-  function handleOpenGame() {
-    navigation.navigate('game');
+  function handleOpenGame({ id, title, bannerUrl }: GameCardProps) {
+    navigation.navigate('game', { id, title, bannerUrl });
   };
 
   return (
@@ -42,7 +42,7 @@ export function Home() {
           renderItem={({ item }) => (
             <GameCard
               data={item}
-              onPress={handleOpenGame}
+              onPress={() => handleOpenGame(item)}
             />
           )}
           showsHorizontalScrollIndicator={false}
