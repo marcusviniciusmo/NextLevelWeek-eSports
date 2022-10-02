@@ -8,6 +8,7 @@ import { THEME } from '../../theme';
 import LogoImg from '../../assets/logo-nlw-esports.png';
 import { styles } from './styles';
 import { Heading } from '../../components/Heading';
+import { DuoCard } from '../../components/DuoCard';
 
 export function Game() {
   const route = useRoute();
@@ -48,6 +49,8 @@ export function Game() {
           title={game.title}
           subtitle='Conecte-se e comece a jogar!'
         />
+
+        <DuoCard />
       </SafeAreaView>
     </Background>
   );
