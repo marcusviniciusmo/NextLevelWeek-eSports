@@ -6,6 +6,7 @@ import { GameParams } from '../../@types/navigation';
 import { Entypo } from '@expo/vector-icons';
 import { THEME } from '../../theme';
 import LogoImg from '../../assets/logo-nlw-esports.png';
+import { styles } from './styles';
 
 export function Game() {
   const route = useRoute();
@@ -13,8 +14,8 @@ export function Game() {
 
   return (
     <Background>
-      <SafeAreaView>
-        <View>
+      <SafeAreaView style={styles.container}>
+        <View style={styles.header}>
           <TouchableOpacity>
             <Entypo
               name='chevron-thin-left'
@@ -25,7 +26,10 @@ export function Game() {
 
           <Image
             source={LogoImg}
+            style={styles.logo}
           />
+
+          <View style={styles.right} />
         </View>
       </SafeAreaView>
     </Background>
