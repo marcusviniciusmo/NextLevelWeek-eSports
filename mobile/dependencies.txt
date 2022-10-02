@@ -19,3 +19,6 @@ npm install @react-navigation/native-stack
 
 // Phosphor Icons
 npm install --save phosphor-react-native
+
+// Expo SVG
+expo install react-native-svg
