@@ -16,3 +16,6 @@ expo install react-native-screens
 
 // React Navigation - Stack
 npm install @react-navigation/native-stack
+
+// Phosphor Icons
+npm install --save phosphor-react-native
