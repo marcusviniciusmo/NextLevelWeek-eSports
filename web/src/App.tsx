@@ -5,18 +5,10 @@ import CreateAdBanner from './components/CreateAdBanner';
 import GameBanner from './components/GameBanner';
 import './styles/main.css';
 import CreateAdModal from './components/CreateAdModal';
-
-interface Games {
-  id: string;
-  title: string;
-  bannerUrl: string;
-  _count: {
-    ads: number;
-  };
-};
+import { Game } from './types';
 
 function App() {
-  const [games, setGames] = useState<Games[]>([]);
+  const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {
     fetch('http://localhost:3333/games')
