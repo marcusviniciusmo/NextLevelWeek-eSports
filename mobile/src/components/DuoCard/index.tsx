@@ -1,6 +1,7 @@
-import { View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import { DuoInfo } from '../DuoInfo';
 import { styles } from './styles';
+import { THEME } from '../../theme';
 
 export interface DuoCardProps {
   id: string;
@@ -35,9 +36,11 @@ export function DuoCard({ data }: Props) {
       />
 
       <DuoInfo
-        label='Nome'
-        value='Diego Fernandes'
-        colorValue='#34D399'
+        label='Chamada de áudio?'
+        value={data.useVoiceChannel ? ' Sim' : 'Não'}
+        colorValue={data.useVoiceChannel
+          ? THEME.COLORS.SUCCESS
+          : THEME.COLORS.ALERT }
       />
     </View>
   );
