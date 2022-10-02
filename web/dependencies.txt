@@ -11,3 +11,6 @@ npm i phosphor-react
 
 // Radix-UI Dialog
 npm install @radix-ui/react-dialog
+
+// Radix-UI Checkbox
+npm install @radix-ui/react-checkbox
