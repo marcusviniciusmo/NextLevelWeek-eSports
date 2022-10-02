@@ -61,9 +61,12 @@ export function Game() {
         <FlatList
           data={ads}
           keyExtractor={item => item.id}
-          renderItem={({item}) => {
+          renderItem={({ item }) => {
             return (
-              <DuoCard data={item} />
+              <DuoCard
+                data={item}
+                onConnect={() => {}}
+              />
             )
           }}
           horizontal
