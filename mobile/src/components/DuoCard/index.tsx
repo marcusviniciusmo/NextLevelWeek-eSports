@@ -44,12 +44,12 @@ export function DuoCard({ data }: Props) {
           : THEME.COLORS.ALERT }
       />
 
-      <TouchableOpacity>
+      <TouchableOpacity style={styles.button}>
         <GameController
           color={THEME.COLORS.TEXT}
           size={20}
         />
-        <Text>Conectar</Text>
+        <Text style={styles.buttonTitle}>Conectar</Text>
       </TouchableOpacity>
     </View>
   );
