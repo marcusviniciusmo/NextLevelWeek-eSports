@@ -66,6 +66,10 @@ export function Game() {
               <DuoCard data={item} />
             )
           }}
+          horizontal
+          style={styles.containerList}
+          contentContainerStyle={styles.contentList}
+          showsHorizontalScrollIndicator={false}
         />
       </SafeAreaView>
     </Background>
