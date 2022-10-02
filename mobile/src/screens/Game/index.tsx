@@ -1,6 +1,6 @@
 import { Background } from '../../components/Background';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { View, TouchableOpacity, Image, FlatList } from 'react-native';
+import { View, TouchableOpacity, Image, FlatList, Text } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import { GameParams } from '../../@types/navigation';
 import { Entypo } from '@expo/vector-icons';
@@ -65,14 +65,19 @@ export function Game() {
             return (
               <DuoCard
                 data={item}
-                onConnect={() => {}}
+                onConnect={() => { }}
               />
             )
           }}
           horizontal
           style={styles.containerList}
-          contentContainerStyle={styles.contentList}
+          contentContainerStyle={ads.length > 0 ? styles.contentList : styles.emptyListContent}
           showsHorizontalScrollIndicator={false}
+          ListEmptyComponent={() => (
+            <Text style={styles.emptyListText}>
+              Não há anúncios publicados ainda.
+            </Text>
+          )}
         />
       </SafeAreaView>
     </Background>
