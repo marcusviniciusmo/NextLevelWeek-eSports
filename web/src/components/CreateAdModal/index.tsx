@@ -3,12 +3,14 @@ import * as Checkbox from '@radix-ui/react-checkbox';
 import * as ToggleGroup from '@radix-ui/react-toggle-group';
 import { Check, GameController } from 'phosphor-react';
 import Input from '../Input';
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { Game } from '../../types';
+import axios from 'axios';
 
 function CreateAdModal() {
   const [games, setGames] = useState<Game[]>([]);
   const [weekDays, setWeekDays] = useState<string[]>([]);
+  const [useVoiceChannel, setUseVoiceChannel] = useState(false);
 
   useEffect(() => {
     fetch('http://localhost:3333/games')
@@ -17,6 +19,35 @@ function CreateAdModal() {
         setGames(data);
       });
   }, []);
+
+  async function handleCreateAd(event: FormEvent) {
+    event.preventDefault()
+
+    const formData = new FormData(event.target as HTMLFormElement)
+    const data = Object.fromEntries(formData)
+
+    if (!data.name) {
+      return ;
+    }
+
+    try {
+      await axios.post(`http://localhost:3333/games/${data.game}/ads`, {
+        name: data.name,
+        yearsPlaying: Number(data.yearsPlaying),
+        discord: data.discord,
+        weekDays: weekDays.map(Number),
+        hourStart: data.hourStart,
+        hourEnd: data.hourEnd,
+        useVoiceChannel: useVoiceChannel
+      });
+
+      alert('Anúncio criado com sucesso!')
+    }
+    catch (error) {
+      console.log(error)
+      alert ('Erro ao criar o anúncio')
+    };
+  };
 
   return (
     <Dialog.Portal>
@@ -27,11 +58,12 @@ function CreateAdModal() {
       >
         <Dialog.Title className='text-3xl font-black'>Publique um anúncio</Dialog.Title>
 
-        <form className='mt-8 flex flex-col gap-4'>
+        <form onSubmit={handleCreateAd} className='mt-8 flex flex-col gap-4'>
           <div className='flex flex-col gap-2'>
             <label htmlFor="game" className='font-semibold'>Qual o game?</label>
             <select
               id='game'
+              name='game'
               className='bg-zinc-900 py-3 px-4 rounded text-sm appearance-none'
               defaultValue=""
             >
@@ -54,18 +86,18 @@ function CreateAdModal() {
 
           <div className='flex flex-col gap-2'>
             <label htmlFor="name">Seu nome (ou nickname)</label>
-            <Input id="name" placeholder='Como te chamam dentro do game?' />
+            <Input name='name' id="name" placeholder='Como te chamam dentro do game?' />
           </div>
 
           <div className='grid grid-cols-2 gap-6'>
             <div className='flex flex-col gap-2'>
               <label htmlFor="yearsPlaying">Joga há quantos anos?</label>
-              <Input type="number" min={0} id="yearsPlays" placeholder='Tudo bem ser ZERO' />
+              <Input name='yearsPlaying' type="number" min={0} id="yearsPlaying" placeholder='Tudo bem ser ZERO' />
             </div>
 
             <div className='flex flex-col gap-2'>
               <label htmlFor="discord">Qual seu discord?</label>
-              <Input id='discord' placeholder='usuario#0000' />
+              <Input name='discord' id='discord' placeholder='usuario#0000' />
             </div>
           </div>
 
@@ -132,14 +164,24 @@ function CreateAdModal() {
             <div className='flex flex-col gap-2 flex-1'>
               <label htmlFor="hourStart">Qual horário do dia?</label>
               <div className='grid grid-cols-2 gap-2'>
-                <Input type="time" id="hourStart" placeholder='De' />
-                <Input type="time" id="hourEnd" placeholder='Até' />
+                <Input name='hourStart' type="time" id="hourStart" placeholder='De' />
+                <Input name='hourEnd' type="time" id="hourEnd" placeholder='Até' />
               </div>
             </div>
           </div>
 
           <label className='mt-2 flex items-center gap-2 text-sm'>
-            <Checkbox.Root className='w-6 h-6 p-1 rounded bg-zinc-900'>
+            <Checkbox.Root
+            checked={useVoiceChannel}
+            onCheckedChange={(checked) => {
+              if (checked) {
+                setUseVoiceChannel(true)
+              } else {
+                setUseVoiceChannel(false)
+              }
+            }}
+              className='w-6 h-6 p-1 rounded bg-zinc-900'
+            >
               <Checkbox.Indicator>
                 <Check className='w-4 h4 text-emerald-400' />
               </Checkbox.Indicator>
