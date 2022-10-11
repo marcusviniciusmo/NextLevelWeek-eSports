@@ -6,15 +6,15 @@ import * as Dialog from '@radix-ui/react-dialog';
 import CreateAdBanner from '../../components/CreateAdBanner';
 import CreateAdModal from '../../components/CreateAdModal';
 import '../../styles/main.css';
+import axios from 'axios';
 
 function Games() {
   const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {
-    fetch('http://localhost:3333/games')
-      .then(response => response.json())
-      .then(data => {
-        setGames(data);
+    axios.get('http://localhost:3333/games')
+      .then((response) => {
+        setGames(response.data);
       });
   }, []);
 

@@ -13,10 +13,9 @@ function CreateAdModal() {
   const [useVoiceChannel, setUseVoiceChannel] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:3333/games')
-      .then(response => response.json())
-      .then(data => {
-        setGames(data);
+    axios.get('http://localhost:3333/games')
+      .then((response) => {
+        setGames(response.data);
       });
   }, []);
 
@@ -27,7 +26,7 @@ function CreateAdModal() {
     const data = Object.fromEntries(formData)
 
     if (!data.name) {
-      return ;
+      return;
     }
 
     try {
@@ -45,7 +44,7 @@ function CreateAdModal() {
     }
     catch (error) {
       console.log(error)
-      alert ('Erro ao criar o anúncio')
+      alert('Erro ao criar o anúncio')
     };
   };
 
@@ -172,14 +171,14 @@ function CreateAdModal() {
 
           <label className='mt-2 flex items-center gap-2 text-sm'>
             <Checkbox.Root
-            checked={useVoiceChannel}
-            onCheckedChange={(checked) => {
-              if (checked) {
-                setUseVoiceChannel(true)
-              } else {
-                setUseVoiceChannel(false)
-              }
-            }}
+              checked={useVoiceChannel}
+              onCheckedChange={(checked) => {
+                if (checked) {
+                  setUseVoiceChannel(true)
+                } else {
+                  setUseVoiceChannel(false)
+                }
+              }}
               className='w-6 h-6 p-1 rounded bg-zinc-900'
             >
               <Checkbox.Indicator>
