@@ -22,6 +22,9 @@ app.get('/games', async (request, response) => {
           ads: true
         }
       }
+    },
+    orderBy: {
+      title: 'asc'
     }
   });
 
