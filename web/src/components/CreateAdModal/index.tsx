@@ -5,7 +5,7 @@ import { Check, GameController } from 'phosphor-react';
 import Input from '../Input';
 import { FormEvent, useEffect, useState } from 'react';
 import { Game } from '../../types';
-import axios from 'axios';
+import { Axios } from '../../utils/Api';
 
 function CreateAdModal() {
   const [games, setGames] = useState<Game[]>([]);
@@ -13,7 +13,7 @@ function CreateAdModal() {
   const [useVoiceChannel, setUseVoiceChannel] = useState(false);
 
   useEffect(() => {
-    axios.get('http://localhost:3333/games')
+    Axios.get('games')
       .then((response) => {
         setGames(response.data);
       });
@@ -30,7 +30,7 @@ function CreateAdModal() {
     }
 
     try {
-      await axios.post(`http://localhost:3333/games/${data.game}/ads`, {
+      await Axios.post(`games/${data.game}/ads`, {
         name: data.name,
         yearsPlaying: Number(data.yearsPlaying),
         discord: data.discord,

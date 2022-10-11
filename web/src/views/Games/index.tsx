@@ -6,13 +6,13 @@ import * as Dialog from '@radix-ui/react-dialog';
 import CreateAdBanner from '../../components/CreateAdBanner';
 import CreateAdModal from '../../components/CreateAdModal';
 import '../../styles/main.css';
-import axios from 'axios';
+import { Axios } from '../../utils/Api';
 
 function Games() {
   const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3333/games')
+    Axios.get('games')
       .then((response) => {
         setGames(response.data);
       });
