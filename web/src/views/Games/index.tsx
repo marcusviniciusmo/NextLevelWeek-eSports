@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 /* API */
 import { Axios } from '../../utils/Api';
 /* Types */
-import { Game } from '../../types';
+import { GameProps } from '../../types';
 /* Image */
 import LogoImage from '../../assets/logo-nlw-esports.svg';
 /* Dependencies */
@@ -16,7 +16,7 @@ import CreateAdModal from '../../components/CreateAdModal';
 import '../../styles/main.css';
 
 function Games() {
-  const [games, setGames] = useState<Game[]>([]);
+  const [games, setGames] = useState<GameProps[]>([]);
 
   useEffect(() => {
     Axios.get('games')

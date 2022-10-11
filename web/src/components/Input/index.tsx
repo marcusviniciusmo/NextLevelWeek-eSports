@@ -1,7 +1,5 @@
-/* React */
-import { InputHTMLAttributes } from 'react';
-
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {};
+/* Types */
+import { InputProps } from '../../types';
 
 function Input(props: InputProps) {
   return (

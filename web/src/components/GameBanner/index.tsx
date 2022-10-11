@@ -1,8 +1,5 @@
-interface GameBannerProps {
-  bannerUrl: string;
-  title: string;
-  adsCount: number;
-};
+/* Types */
+import { GameBannerProps} from '../../types';
 
 function GameBanner(props: GameBannerProps) {
   return (
