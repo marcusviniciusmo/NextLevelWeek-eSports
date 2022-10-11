@@ -22,3 +22,6 @@ npm install --save phosphor-react-native
 
 // Expo SVG
 expo install react-native-svg
+
+// Expo Clipboard
+expo install expo-clipboard
