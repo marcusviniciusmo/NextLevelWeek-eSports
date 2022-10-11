@@ -10,9 +10,12 @@ import { styles } from './styles';
 import { Heading } from '../../components/Heading';
 import { DuoCard, DuoCardProps } from '../../components/DuoCard';
 import { useEffect, useState } from 'react';
+import { DuoMatch } from '../../components/DuoMatch';
 
 export function Game() {
   const [ads, setAds] = useState<DuoCardProps[]>([]);
+  const [discorDuoSelected, setDiscordDuoSelected] = useState('a');
+
   const route = useRoute();
   const game = route.params as GameParams;
   const navigation = useNavigation();
@@ -78,6 +81,12 @@ export function Game() {
               Não há anúncios publicados ainda.
             </Text>
           )}
+        />
+
+        <DuoMatch
+          visible={discorDuoSelected.length > 0}
+          onClose={() => setDiscordDuoSelected('')}
+          discord='teste'
         />
       </SafeAreaView>
     </Background>
