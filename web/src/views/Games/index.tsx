@@ -1,12 +1,19 @@
+/* React */
 import { useEffect, useState } from 'react';
-import LogoImage from '../../assets/logo-nlw-esports.svg';
+/* API */
+import { Axios } from '../../utils/Api';
+/* Types */
 import { Game } from '../../types';
-import GameBanner from '../../components/GameBanner';
+/* Image */
+import LogoImage from '../../assets/logo-nlw-esports.svg';
+/* Dependencies */
 import * as Dialog from '@radix-ui/react-dialog';
+/* Components */
+import GameBanner from '../../components/GameBanner';
 import CreateAdBanner from '../../components/CreateAdBanner';
 import CreateAdModal from '../../components/CreateAdModal';
+/* Styles */
 import '../../styles/main.css';
-import { Axios } from '../../utils/Api';
 
 function Games() {
   const [games, setGames] = useState<Game[]>([]);

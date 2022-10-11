@@ -1,11 +1,16 @@
+/* React */
+import { FormEvent, useEffect, useState } from 'react';
+/* API */
+import { Axios } from '../../utils/Api';
+/* Types */
+import { Game } from '../../types';
+/* Dependencies */
+import { Check, GameController } from 'phosphor-react';
 import * as Dialog from '@radix-ui/react-dialog';
 import * as Checkbox from '@radix-ui/react-checkbox';
 import * as ToggleGroup from '@radix-ui/react-toggle-group';
-import { Check, GameController } from 'phosphor-react';
+/* Components */
 import Input from '../Input';
-import { FormEvent, useEffect, useState } from 'react';
-import { Game } from '../../types';
-import { Axios } from '../../utils/Api';
 
 function CreateAdModal() {
   const [games, setGames] = useState<Game[]>([]);
