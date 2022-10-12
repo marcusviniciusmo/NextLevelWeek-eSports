@@ -1,6 +1,12 @@
 /* React */
 import { InputHTMLAttributes } from 'react';
 
+export interface ArrowSliderProps {
+  disabled: boolean;
+  left?: boolean;
+  onClick: (e: any) => void;
+};
+
 export interface GameProps {
   id: string;
   title: string;
