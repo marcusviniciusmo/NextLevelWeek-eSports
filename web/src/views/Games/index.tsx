@@ -7,16 +7,24 @@ import { GameProps } from '../../types';
 /* Image */
 import LogoImage from '../../assets/logo-nlw-esports.svg';
 /* Dependencies */
+import { useKeenSlider } from "keen-slider/react";
 import * as Dialog from '@radix-ui/react-dialog';
 /* Components */
 import GameBanner from '../../components/GameBanner';
 import CreateAdBanner from '../../components/CreateAdBanner';
 import CreateAdModal from '../../components/CreateAdModal';
 /* Styles */
+import "keen-slider/keen-slider.min.css";
 import '../../styles/main.css';
 
 function Games() {
   const [games, setGames] = useState<GameProps[]>([]);
+  const [gameSlider] = useKeenSlider<HTMLDivElement>({
+    slides: {
+      perView: 6,
+      spacing: 10
+    }
+  });
 
   useEffect(() => {
     Axios.get('games')
@@ -33,16 +41,19 @@ function Games() {
         Seu <span className='text-transparent bg-nlw-gradient bg-clip-text'>duo</span> está aqui.
       </h1>
 
-      <div className='grid grid-cols-6 gap-6 mt-16'>
+      <div ref={gameSlider} className="keen-slider grid grid-cols-6 gap-6 mt-16">
         {
           games.map(game => {
             return (
-              <GameBanner
-                key={game.id}
-                title={game.title}
-                bannerUrl={game.bannerUrl}
-                adsCount={game._count.ads}
-              />
+              <div className="keen-slider__slide">
+
+                <GameBanner
+                  key={game.id}
+                  title={game.title}
+                  bannerUrl={game.bannerUrl}
+                  adsCount={game._count.ads}
+                />
+              </div>
             )
           })
         }
