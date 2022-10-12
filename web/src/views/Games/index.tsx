@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 /* API */
 import { Axios } from '../../utils/Api';
 /* Types */
-import { GameProps } from '../../types';
+import { ArrowSliderProps, GameProps } from '../../types';
 /* Image */
 import LogoImage from '../../assets/logo-nlw-esports.svg';
 /* Dependencies */
@@ -13,18 +13,39 @@ import * as Dialog from '@radix-ui/react-dialog';
 import GameBanner from '../../components/GameBanner';
 import CreateAdBanner from '../../components/CreateAdBanner';
 import CreateAdModal from '../../components/CreateAdModal';
+import ArrowSlider from '../../components/ArrowSlider';
 /* Styles */
 import "keen-slider/keen-slider.min.css";
 import '../../styles/main.css';
 
 function Games() {
+  const perVierDefault = 6;
   const [games, setGames] = useState<GameProps[]>([]);
-  const [gameSlider] = useKeenSlider<HTMLDivElement>({
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [loaded, setLoaded] = useState(false);
+  const [gameSlider, gameInstanceRef] = useKeenSlider<HTMLDivElement>({
+    initial: 0,
+    slideChanged(slider) {
+      setCurrentSlide(slider.track.details.rel)
+    },
+    created() {
+      setLoaded(true)
+    },
     slides: {
-      perView: 6,
-      spacing: 10
+      perView: perVierDefault,
+      spacing: 20
     }
   });
+
+  function Arrow(props: ArrowSliderProps) {
+    return (
+      <ArrowSlider
+        disabled={props.disabled}
+        left={props.left}
+        onClick={props.onClick}
+      />
+    )
+  }
 
   useEffect(() => {
     Axios.get('games')
@@ -41,12 +62,11 @@ function Games() {
         Seu <span className='text-transparent bg-nlw-gradient bg-clip-text'>duo</span> está aqui.
       </h1>
 
-      <div ref={gameSlider} className="keen-slider grid grid-cols-6 gap-6 mt-16">
+      <div ref={gameSlider} className="keen-slider mt-16">
         {
           games.map(game => {
             return (
               <div className="keen-slider__slide">
-
                 <GameBanner
                   key={game.id}
                   title={game.title}
@@ -56,6 +76,29 @@ function Games() {
               </div>
             )
           })
+        }
+        {
+          loaded &&
+          gameInstanceRef.current && (
+            <>
+              <Arrow
+                left
+                onClick={(e: any) =>
+                  e.stopPropagation() || gameInstanceRef.current?.prev()
+                }
+                disabled={currentSlide === 0}
+              />
+
+              <Arrow
+                onClick={(e: any) =>
+                  e.stopPropagation() || gameInstanceRef.current?.next()
+                }
+                disabled={
+                  currentSlide >= games.length - perVierDefault
+                }
+              />
+            </>
+          )
         }
       </div>
 
