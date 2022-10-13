@@ -7,6 +7,12 @@ export interface ArrowSliderProps {
   onClick: (e: any) => void;
 };
 
+export interface DaysOfWeekProps {
+  label: string;
+  value: string;
+  title: string;
+};
+
 export interface GameProps {
   id: string;
   title: string;

@@ -1,0 +1,174 @@
+.createAdModalOverlay {
+  background-color: rgb(0 0 0 / 0.6);
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.createAdModalContent {
+  --bg-opacity: 1;
+  --text-opacity: 1;
+  --translate-x: -50%;
+  --translate-y: -50%;
+  --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+  background-color: rgb(42 38 52 / var(--bg-opacity));
+  color: rgb(255 255 255 / var(--text-opacity));
+  transform: translate(var(--translate-x), var(--translate-y));
+  box-shadow: var(--shadow);
+  width: 480px;
+  padding: 32px 40px;
+  border-radius: 8px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+
+.createAdModalTitle {
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 36px;
+}
+
+.createAdModalContent form {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.createAdModalContent form div.createAdModalInput,
+.createAdModalContent form div.createAtModalInputTime {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.createAdModalContent form div.createAdModalInput label {
+  font-weight: 600;
+}
+
+.createAdModalContent select {
+  --bg-opacity: 1;
+  
+  background-color: rgb(24 24 27 / var(--bg-opacity));
+  font-size: 14px;
+  line-height: 20px;
+  padding: 12px 16px;
+  border-radius: 4px;
+  appearance: none;
+}
+.createAdModalContent form div.createAdModalGridInput {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.createAdModalContent form div.createAdModalGridDaysOfWeek {
+  display: flex;
+  gap: 24px;
+}
+
+.createAdModalContent form .createAdModalGridToggleGroupDays {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.createAdModalContent form .createAdModalGridToggleItemDay {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+}
+
+.createAdModalContent form .daySelected {
+  --bg-opacity: 1;
+  
+  background-color: rgb(76 29 149 / var(--bg-opacity));
+}
+
+.createAdModalContent form .dayNonSelected {
+  --bg-opacity: 1;
+  background-color: rgb(113 113 122 / var(--bg-opacity));
+}
+
+.createAdModalContent form div.createAtModalInputTime {
+  flex: 1 1 0%;
+}
+
+.createAdModalContent form div.createAtModalInputTime div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.createAdModalContent form .createAdModalCheckboxLabel {
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.createAdModalContent form .createAdModalCheckbox {
+  --bg-opacity: 1;
+  
+  background-color: rgb(24 24 27 / var(--bg-opacity));
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.createAdModalContent form .createAdModalCheckboxIndicator {
+  --text-opacity: 1;
+
+  color: rgb(52 211 153 / var(--text-opacity));
+  width: 16px;
+  height: 16px;
+}
+
+.createAdModalContent form footer {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.createAdModalContent form footer .buttonCancelar,
+.createAdModalContent form footer .buttonEcontrarDuo {
+  font-weight: 600;
+  height: 48px;
+  padding-inline: 20px;
+  border-radius: 6px;
+}
+
+.createAdModalContent form footer .buttonCancelar {
+  --bg-opacity: 1;
+  
+  background-color: rgb(113 113 122 / var(--bg-opacity));
+}
+
+.createAdModalContent form footer .buttonCancelar:hover {
+  --bg-opacity: 1;
+  
+  background-color: rgb(82 82 91 / var(--bg-opacity)); 
+}
+
+.createAdModalContent form footer .buttonEcontrarDuo {
+  --bg-opacity: 1;
+  
+  background-color: rgb(139 92 246 / var(--bg-opacity));
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.createAdModalContent form footer .buttonEcontrarDuo:hover {
+  --tw-bg-opacity: 1;
+  
+  background-color: rgb(124 58 237 / var(--tw-bg-opacity));
+}
