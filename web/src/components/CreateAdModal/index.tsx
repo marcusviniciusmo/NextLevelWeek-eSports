@@ -119,9 +119,13 @@ function CreateAdModal() {
                   DaysOfWeekData.map((day) => {
                     return (
                       <ToggleGroup.Item
+                        key={day.value}
                         value={day.value}
                         title={day.title}
-                        className={`createAdModalGridToggleItemDay  ${weekDays.includes(day.value) ? 'daySelected' : 'dayNonSelected'}`}
+                        className={`createAdModalGridToggleItemDay  
+                          ${weekDays.includes(day.value)
+                            ? 'daySelected'
+                            : 'dayNonSelected'}`}
                       >
                         {day.label}
                       </ToggleGroup.Item>

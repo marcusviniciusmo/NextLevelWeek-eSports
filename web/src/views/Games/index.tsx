@@ -58,9 +58,8 @@ function Games() {
         {
           games.map(game => {
             return (
-              <div className="keen-slider__slide">
+              <div className="keen-slider__slide" key={game.id}>
                 <GameBanner
-                  key={game.id}
                   title={game.title}
                   bannerUrl={game.bannerUrl}
                   adsCount={game._count.ads}
