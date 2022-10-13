@@ -12,7 +12,7 @@ import * as ToggleGroup from '@radix-ui/react-toggle-group';
 /* Components */
 import Input from '../Input';
 /* Mocked Data */
-import { DaysOfWeekData } from '../Mocks/CreateAdModal';
+import { DaysOfWeekData } from '../../Mocks/CreateAdModal';
 /* Styles */
 import './styles.css';
 

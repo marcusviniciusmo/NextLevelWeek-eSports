@@ -1,4 +1,4 @@
-import { DaysOfWeekProps } from '../../../types';
+import { DaysOfWeekProps } from '../../types';
 
 export const DaysOfWeekData: DaysOfWeekProps[] = [
   {
