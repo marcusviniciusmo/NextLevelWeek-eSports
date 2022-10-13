@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 /* API */
 import { Axios } from '../../utils/Api';
 /* Types */
-import { ArrowSliderProps, GameProps } from '../../types';
+import { GameProps } from '../../types';
 /* Image */
 import LogoImage from '../../assets/logo-nlw-esports.svg';
 /* Dependencies */
@@ -17,9 +17,11 @@ import ArrowSlider from '../../components/ArrowSlider';
 /* Styles */
 import "keen-slider/keen-slider.min.css";
 import '../../styles/main.css';
+import './styles.css';
 
 function Games() {
   const perVierDefault = 6;
+
   const [games, setGames] = useState<GameProps[]>([]);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -37,16 +39,6 @@ function Games() {
     }
   });
 
-  function Arrow(props: ArrowSliderProps) {
-    return (
-      <ArrowSlider
-        disabled={props.disabled}
-        left={props.left}
-        onClick={props.onClick}
-      />
-    )
-  }
-
   useEffect(() => {
     Axios.get('games')
       .then((response) => {
@@ -55,14 +47,14 @@ function Games() {
   }, []);
 
   return (
-    <div className='max-w-[1344px] mx-auto flex flex-col items-center my-20'>
+    <div id='gamesViewContainer'>
       <img src={LogoImage} alt="Logo NLW eSports" />
 
-      <h1 className='text-6xl text-white font-black mt-20'>
-        Seu <span className='text-transparent bg-nlw-gradient bg-clip-text'>duo</span> está aqui.
+      <h1>
+        Seu <span>duo</span> está aqui.
       </h1>
 
-      <div ref={gameSlider} className="keen-slider mt-16">
+      <div ref={gameSlider} className="slider keen-slider">
         {
           games.map(game => {
             return (
@@ -81,21 +73,15 @@ function Games() {
           loaded &&
           gameInstanceRef.current && (
             <>
-              <Arrow
+              <ArrowSlider
                 left
-                onClick={(e: any) =>
-                  e.stopPropagation() || gameInstanceRef.current?.prev()
-                }
                 disabled={currentSlide === 0}
+                onClick={e => e.stopPropagation() || gameInstanceRef.current?.prev()}
               />
 
-              <Arrow
-                onClick={(e: any) =>
-                  e.stopPropagation() || gameInstanceRef.current?.next()
-                }
-                disabled={
-                  currentSlide >= games.length - perVierDefault
-                }
+              <ArrowSlider
+                disabled={currentSlide >= games.length - perVierDefault}
+                onClick={e => e.stopPropagation() || gameInstanceRef.current?.next()}
               />
             </>
           )
