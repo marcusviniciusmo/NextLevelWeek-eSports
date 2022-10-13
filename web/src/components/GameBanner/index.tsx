@@ -1,14 +1,16 @@
 /* Types */
 import { GameBannerProps} from '../../types';
+/* Styles */
+import './styles.css';
 
 function GameBanner(props: GameBannerProps) {
   return (
-    <a href="" className='relative rounded-lg overflow-hidden'>
-      <img src={props.bannerUrl} alt="" />
+    <a href="#" id='gameBannerContainer'>
+      <img src={props.bannerUrl} alt={props.title} />
 
-      <div className='w-full pt-16 pb-4 px-4 bg-game-gradient absolute bottom-0 left-0 right-0'>
-        <strong className='font-bold text-white block'>{props.title}</strong>
-        <span className='text-zinc-300 text-sm block'>{props.adsCount} anúncio(s)</span>
+      <div>
+        <strong>{props.title}</strong>
+        <span>{props.adsCount} anúncio(s)</span>
       </div>
     </a>
   );
