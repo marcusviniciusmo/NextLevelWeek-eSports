@@ -1,8 +1,9 @@
-import Games from './views/Games';
+/* Routes */
+import Router from './routes';
 
 function App() {
   return (
-    <Games />
+    <Router />
   );
 };
 
