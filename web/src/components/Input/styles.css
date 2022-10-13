@@ -1,6 +1,4 @@
 input.inputComponent {
-  --bg-opacity: 1;
-
   background-color: rgb(24 24 27 / var(--bg-opacity));
   font-size: 14px;
   line-height: 20px;
@@ -9,7 +7,5 @@ input.inputComponent {
 }
 
 input.inputComponent::placeholder {
-  --text-opacity: 1;
-
   color: rgb(113 113 122 / var(--text-opacity));
 }

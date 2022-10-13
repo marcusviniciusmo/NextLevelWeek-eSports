@@ -7,8 +7,6 @@ div#gamesViewContainer {
 }
 
 div#gamesViewContainer h1 {
-  --text-opacity: 1;
-
   color: rgb(255 255 255 / var(--text-opacity));
   font-size: 60px;
   font-weight: 900;

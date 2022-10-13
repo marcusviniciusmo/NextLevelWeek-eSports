@@ -8,12 +8,6 @@
 }
 
 .createAdModalContent {
-  --bg-opacity: 1;
-  --text-opacity: 1;
-  --translate-x: -50%;
-  --translate-y: -50%;
-  --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  
   background-color: rgb(42 38 52 / var(--bg-opacity));
   color: rgb(255 255 255 / var(--text-opacity));
   transform: translate(var(--translate-x), var(--translate-y));
@@ -51,8 +45,6 @@
 }
 
 .createAdModalContent select {
-  --bg-opacity: 1;
-  
   background-color: rgb(24 24 27 / var(--bg-opacity));
   font-size: 14px;
   line-height: 20px;
@@ -84,13 +76,10 @@
 }
 
 .createAdModalContent form .daySelected {
-  --bg-opacity: 1;
-  
   background-color: rgb(76 29 149 / var(--bg-opacity));
 }
 
 .createAdModalContent form .dayNonSelected {
-  --bg-opacity: 1;
   background-color: rgb(113 113 122 / var(--bg-opacity));
 }
 
@@ -114,8 +103,6 @@
 }
 
 .createAdModalContent form .createAdModalCheckbox {
-  --bg-opacity: 1;
-  
   background-color: rgb(24 24 27 / var(--bg-opacity));
   width: 24px;
   height: 24px;
@@ -124,8 +111,6 @@
 }
 
 .createAdModalContent form .createAdModalCheckboxIndicator {
-  --text-opacity: 1;
-
   color: rgb(52 211 153 / var(--text-opacity));
   width: 16px;
   height: 16px;
@@ -147,20 +132,14 @@
 }
 
 .createAdModalContent form footer .buttonCancelar {
-  --bg-opacity: 1;
-  
   background-color: rgb(113 113 122 / var(--bg-opacity));
 }
 
 .createAdModalContent form footer .buttonCancelar:hover {
-  --bg-opacity: 1;
-  
   background-color: rgb(82 82 91 / var(--bg-opacity)); 
 }
 
 .createAdModalContent form footer .buttonEcontrarDuo {
-  --bg-opacity: 1;
-  
   background-color: rgb(139 92 246 / var(--bg-opacity));
   display: flex;
   align-items: center;
@@ -168,7 +147,5 @@
 }
 
 .createAdModalContent form footer .buttonEcontrarDuo:hover {
-  --tw-bg-opacity: 1;
-  
-  background-color: rgb(124 58 237 / var(--tw-bg-opacity));
+  background-color: rgb(124 58 237 / var(--bg-opacity));
 }

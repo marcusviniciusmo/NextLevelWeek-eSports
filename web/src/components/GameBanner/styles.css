@@ -16,16 +16,12 @@
 }
 
 #gameBannerContainer div strong {
-  --text-opacity: 1;
-
   color: rgb(255 255 255 / var(--text-opacity));
   font-weight: 700;
   display: block;
 }
 
 #gameBannerContainer div span {
-  --text-opacity: 1;
-
   color: rgb(212 212 216 / var(--text-opacity));
   font-size: 14px;
   line-height: 20px;

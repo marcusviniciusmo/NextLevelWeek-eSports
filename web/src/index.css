@@ -1,0 +1,7 @@
+:root {
+  --bg-opacity: 1;
+  --text-opacity: 1;
+  --translate-x: -50%;
+  --translate-y: -50%;
+  --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
