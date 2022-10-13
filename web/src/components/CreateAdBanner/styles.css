@@ -1,0 +1,55 @@
+div#createAdBannerContainer {
+  background-image: linear-gradient(
+    90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
+  margin-top: 32px;
+  padding-top: 4px;
+  border-radius: 8px;
+  align-self: stretch;
+  overflow: hidden;
+}
+
+div#createAdBannerContainer div.bannerContainer {
+  --bg-opacity: 1;
+
+  background-color: rgb(42 38 52 / var(--bg-opacity));
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+div#createAdBannerContainer div.bannerContainer strong {
+  --text-opacity: 1;
+
+  color: rgb(255 255 255 / var(--text-opacity));
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 32px;
+  display: block;
+}
+
+div#createAdBannerContainer div.bannerContainer span {
+  --text-opacity: 1;
+  
+  color: rgb(161 161 170 / var(--text-opacity));
+  display: block;
+}
+
+div#createAdBannerContainer div.bannerContainer .buttonCreateAd {
+  --bg-opacity: 1;
+  --text-opacity: 1;
+  
+  background-color: rgb(139 92 246 / var(--bg-opacity));
+  color: rgb(255 255 255 / var(--text-opacity));
+  padding: 12px 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+div#createAdBannerContainer div.bannerContainer .buttonCreateAd:hover {
+  --bg-opacity: 1;
+  
+  background-color: rgb(124 58 237 / var(--bg-opacity));
+}
