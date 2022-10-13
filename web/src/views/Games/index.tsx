@@ -7,6 +7,7 @@ import { GameProps } from '../../types';
 /* Image */
 import LogoImage from '../../assets/logo-nlw-esports.svg';
 /* Dependencies */
+import { Link } from 'react-router-dom';
 import { useKeenSlider } from "keen-slider/react";
 import * as Dialog from '@radix-ui/react-dialog';
 /* Components */
@@ -59,11 +60,13 @@ function Games() {
           games.map(game => {
             return (
               <div className="keen-slider__slide" key={game.id}>
-                <GameBanner
-                  title={game.title}
-                  bannerUrl={game.bannerUrl}
-                  adsCount={game._count.ads}
-                />
+                <Link to={`games/${game.id}/ads`}>
+                  <GameBanner
+                    title={game.title}
+                    bannerUrl={game.bannerUrl}
+                    adsCount={game._count.ads}
+                  />
+                </Link>
               </div>
             )
           })
