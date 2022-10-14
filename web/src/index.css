@@ -4,6 +4,8 @@
   --translate-x: -50%;
   --translate-y: -50%;
   --shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --linear-gradient-duo: linear-gradient(
+    90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
 }
 
 body {
