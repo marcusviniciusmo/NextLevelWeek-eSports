@@ -1,6 +1,16 @@
 /* React */
 import { InputHTMLAttributes } from 'react';
 
+export interface AdsProps {
+  id: string;
+  name: string;
+  yearsPlaying: number;
+  weekDays: string[];
+  hourStart: string;
+  hourEnd: string;
+  useVoiceChannel: boolean;
+};
+
 export interface ArrowSliderProps {
   disabled: boolean;
   left?: boolean;
@@ -28,4 +38,4 @@ export interface GameBannerProps {
   adsCount: number;
 };
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {};
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> { };

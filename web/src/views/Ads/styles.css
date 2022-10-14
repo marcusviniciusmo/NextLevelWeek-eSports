@@ -1,0 +1,111 @@
+div#adsViewContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div#adsViewContainer div.adsViewLogo {
+  margin-block: 30px;
+  zoom: 0.7;
+}
+
+div#adsViewContainer div.adViewGameSelected {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+div#adsViewContainer div.adViewGameSelectedImage {
+  zoom: 0.6;
+}
+
+div#adsViewContainer div.adViewGameSelectedImage img {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+div#adsViewContainer div.adViewGameSelected strong {
+  color: #FFFFFF;
+  font-size: 20px;
+  display: block;
+}
+
+div#adsViewContainer div.adViewGameSpecs span {
+  color: #C4C4C6;
+  font-size: 15px;
+  display: block;
+}
+
+div#adsViewContainer h1 {
+  color: rgb(255 255 255 / var(--text-opacity));
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 1;
+  margin-left: 50px;
+}
+
+div#adsViewContainer h1 span {
+  background-image: var(--linear-gradient-duo);
+  background-clip: text;
+  color: transparent;
+}
+
+div#adsViewContainer div#adsListedByGame {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: row;
+}
+
+div#adsViewContainer div.adByGame {
+  background: #2A2634;
+  border-radius: 8px;
+  margin-inline: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+div#adsViewContainer div.adByGame:hover {
+  background: rgb(42 38 52 / 0.6);
+}
+
+div#adsViewContainer div.adByGame span {
+  color: #C4C4C6;
+  display: block;
+}
+
+div#adsViewContainer div.adByGame strong {
+  color: #FFFFFF;
+  margin-bottom: 15px;
+  display: block;
+}
+
+div#adsViewContainer div.adByGame strong.voiceChannel {
+  color: #34D399;
+}
+
+div#adsViewContainer div.adByGame strong.noVoiceChannel {
+  color: #F87171;
+}
+
+div#adsListedByGame div.adByGame button {
+  background: #8B5CF6;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 4px;
+  margin: 5px auto 0 auto;
+  width: 170px;
+  height: 36px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+div#adsListedByGame div.adByGame button:hover {
+  background: rgb(137 90 246 / 0.7);
+}
