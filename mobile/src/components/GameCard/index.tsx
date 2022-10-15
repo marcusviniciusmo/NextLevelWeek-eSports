@@ -1,19 +1,15 @@
-import {
-  Text,
-  TouchableOpacity,
-  TouchableOpacityProps,
-  ImageBackground
-} from 'react-native';
+/* React Native */
+import { Text, TouchableOpacity, ImageBackground } from 'react-native';
+/* Dependecies */
 import { LinearGradient } from 'expo-linear-gradient';
+/* Types */
+import { GameProps } from '../../types';
+/* Theme */
 import { THEME } from '../../theme';
+/* Styles */
 import { styles } from './styles';
-import { GameCardProps } from '../../types';
 
-interface Props extends TouchableOpacityProps {
-  data: GameCardProps;
-};
-
-export function GameCard({ data, ...rest }: Props) {
+export function GameCard({ data, ...rest }: GameProps) {
   return (
     <TouchableOpacity style={styles.container} {...rest}>
       <ImageBackground
