@@ -1,4 +1,4 @@
-import { TouchableOpacityProps, ViewProps } from 'react-native';
+import { ModalProps, TouchableOpacityProps, ViewProps } from 'react-native';
 
 export interface DuoCardProps {
   id: string;
@@ -8,6 +8,11 @@ export interface DuoCardProps {
   useVoiceChannel: boolean;
   weekDays: string[];
   yearsPlaying: number;
+};
+
+export interface DuoMatchProps extends ModalProps {
+  discord: string;
+  onClose: () => void;
 };
 
 export interface GameCardProps {
