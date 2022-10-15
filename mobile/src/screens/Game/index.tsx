@@ -1,18 +1,30 @@
-import { Background } from '../../components/Background';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { View, TouchableOpacity, Image, FlatList, Text } from 'react-native';
-import { useRoute, useNavigation } from '@react-navigation/native';
-import { GameParams } from '../../@types/navigation';
-import { Entypo } from '@expo/vector-icons';
-import { THEME } from '../../theme';
-import LogoImg from '../../assets/logo-nlw-esports.png';
-import { styles } from './styles';
-import { Heading } from '../../components/Heading';
-import { DuoCard, DuoCardProps } from '../../components/DuoCard';
+/* React */
 import { useEffect, useState } from 'react';
-import { DuoMatch } from '../../components/DuoMatch';
+/* React Native */
+import { View, TouchableOpacity, Image, FlatList } from 'react-native';
 /* API */
 import { Axios } from '../../utils/Api';
+/* Dependecies */
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { useRoute, useNavigation } from '@react-navigation/native';
+import { GameParams } from '../../@types/navigation';
+/* Components */
+import { Background } from '../../components/Background';
+import { Heading } from '../../components/Heading';
+import { DuoCard } from '../../components/DuoCard';
+import { DuoMatch } from '../../components/DuoMatch';
+import { EmptyList } from '../../components/EmptyList';
+/* Icons */
+import { Entypo } from '@expo/vector-icons';
+/* Image */
+import LogoImg from '../../assets/logo-nlw-esports.png';
+/* Types */
+import { DuoCardProps } from '../../types';
+/* Theme */
+import { THEME } from '../../theme';
+/* Styles */
+import { styles } from './styles';
+
 
 export function Game() {
   const [ads, setAds] = useState<DuoCardProps[]>([]);
@@ -84,12 +96,12 @@ export function Game() {
           }}
           horizontal
           style={styles.containerList}
-          contentContainerStyle={ads.length > 0 ? styles.contentList : styles.emptyListContent}
+          contentContainerStyle={ads.length > 0
+            ? styles.contentList
+            : styles.emptyListContent}
           showsHorizontalScrollIndicator={false}
           ListEmptyComponent={() => (
-            <Text style={styles.emptyListText}>
-              Não há anúncios publicados ainda.
-            </Text>
+            <EmptyList />
           )}
         />
 

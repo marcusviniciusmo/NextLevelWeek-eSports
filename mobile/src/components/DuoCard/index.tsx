@@ -3,16 +3,8 @@ import { DuoInfo } from '../DuoInfo';
 import { styles } from './styles';
 import { THEME } from '../../theme';
 import { GameController } from 'phosphor-react-native';
-
-export interface DuoCardProps {
-  id: string;
-  hourEnd: string;
-  hourStart: string;
-  name: string;
-  useVoiceChannel: boolean;
-  weekDays: string[];
-  yearsPlaying: number;
-};
+/* Types */
+import { DuoCardProps } from '../../types';
 
 interface Props {
   data: DuoCardProps;
