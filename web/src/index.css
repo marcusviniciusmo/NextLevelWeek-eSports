@@ -9,7 +9,7 @@
 }
 
 body {
-  background-image: url('../public/backgroundGalaxy.png') !important;
+  background-image: url('../backgroundGalaxy.png') !important;
 }
 
 .dialogModalOverlay {
