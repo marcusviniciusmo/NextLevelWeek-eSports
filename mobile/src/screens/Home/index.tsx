@@ -7,6 +7,8 @@ import { Heading } from '../../components/Heading';
 import { GameCard, GameCardProps } from '../../components/GameCard';
 import { styles } from './styles';
 import Logo from '../../assets/logo-nlw-esports.png';
+/* API */
+import { Axios } from '../../utils/Api';
 
 export function Home() {
   const [games, setGames] = useState<GameCardProps[]>([]);
@@ -14,9 +16,10 @@ export function Home() {
   const navigation = useNavigation();
 
   useEffect(() => {
-    fetch('http://192.168.0.171:3333/games')
-      .then(response => response.json())
-      .then(data => setGames(data));
+    Axios.get('games')
+    .then((response) => {
+      setGames(response.data);
+    });
   }, []);
 
   function handleOpenGame({ id, title, bannerUrl }: GameCardProps) {

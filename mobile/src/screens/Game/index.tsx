@@ -11,6 +11,8 @@ import { Heading } from '../../components/Heading';
 import { DuoCard, DuoCardProps } from '../../components/DuoCard';
 import { useEffect, useState } from 'react';
 import { DuoMatch } from '../../components/DuoMatch';
+/* API */
+import { Axios } from '../../utils/Api';
 
 export function Game() {
   const [ads, setAds] = useState<DuoCardProps[]>([]);
@@ -25,15 +27,17 @@ export function Game() {
   };
 
   async function getDiscordByAd(adsId: string) {
-    fetch(`http://192.168.0.171:3333/ads/${adsId}/discord`)
-      .then(response => response.json())
-      .then(data => setDiscordDuoSelected(data.discord))
+    Axios.get(`ads/${adsId}/discord`)
+      .then((response) => {
+        setDiscordDuoSelected(response.data.discord);
+      });
   };
 
   useEffect(() => {
-    fetch(`http://192.168.0.171:3333/games/${game.id}/ads`)
-      .then(response => response.json())
-      .then(data => setAds(data))
+    Axios.get(`games/${game.id}/ads`)
+      .then((response) => {
+        setAds(response.data);
+      });
   }, []);
 
   return (
