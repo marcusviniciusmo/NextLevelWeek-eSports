@@ -1,4 +1,4 @@
-import { ModalProps, TouchableOpacityProps, ViewProps } from 'react-native';
+import { ColorValue, ModalProps, TouchableOpacityProps, ViewProps } from 'react-native';
 
 export interface DuoCardProps {
   id: string;
@@ -8,6 +8,12 @@ export interface DuoCardProps {
   useVoiceChannel: boolean;
   weekDays: string[];
   yearsPlaying: number;
+};
+
+export interface DuoInfoProps {
+  label: string;
+  value: string;
+  colorValue?: ColorValue;
 };
 
 export interface DuoMatchProps extends ModalProps {
