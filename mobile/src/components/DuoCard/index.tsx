@@ -1,10 +1,15 @@
+/* React Native */
 import { TouchableOpacity, View, Text } from 'react-native';
-import { DuoInfo } from '../DuoInfo';
-import { styles } from './styles';
-import { THEME } from '../../theme';
+/* Dependecies */
 import { GameController } from 'phosphor-react-native';
+/* Components */
+import { DuoInfo } from '../DuoInfo';
 /* Types */
 import { DuoCardProps } from '../../types';
+/* Theme */
+import { THEME } from '../../theme';
+/* Styles */
+import { styles } from './styles';
 
 interface Props {
   data: DuoCardProps;
