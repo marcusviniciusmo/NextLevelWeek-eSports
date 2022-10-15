@@ -1,10 +1,11 @@
+/* React Native */
 import { ImageBackground } from 'react-native';
-import { styles } from './styles';
+/* Image */
 import BackgroundImg from '../../assets/background-galaxy.png';
-
-interface BackgroundProps {
-  children: React.ReactNode
-};
+/* Types */
+import { BackgroundProps } from '../../types';
+/* Styles */
+import { styles } from './styles';
 
 export function Background({ children }: BackgroundProps) {
   return (

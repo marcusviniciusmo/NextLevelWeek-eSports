@@ -1,5 +1,9 @@
 import { ColorValue, ModalProps, TouchableOpacityProps, ViewProps } from 'react-native';
 
+export interface BackgroundProps {
+  children: React.ReactNode
+};
+
 export interface DuoCardProps {
   id: string;
   hourEnd: string;
