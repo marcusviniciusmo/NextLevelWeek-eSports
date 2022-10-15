@@ -7,15 +7,7 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import { THEME } from '../../theme';
 import { styles } from './styles';
-
-export interface GameCardProps {
-  id: string;
-  title: string;
-  bannerUrl: string;
-  _count: {
-    ads: number;
-  };
-};
+import { GameCardProps } from '../../types';
 
 interface Props extends TouchableOpacityProps {
   data: GameCardProps;
