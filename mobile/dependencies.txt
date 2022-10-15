@@ -25,3 +25,6 @@ expo install react-native-svg
 
 // Expo Clipboard
 expo install expo-clipboard
+
+// Axios
+yarn add axios
