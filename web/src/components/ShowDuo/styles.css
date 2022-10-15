@@ -1,0 +1,39 @@
+.showDuoModalContent {
+  width: 300px;
+}
+
+div#showDuoInfoContainer {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+div#showDuoInfoContainer div.showDuoInfo {
+  margin-bottom: 10px;
+}
+
+div#showDuoInfoContainer div.showDuoInfo span {
+  color: #C4C4C6;
+  display: block;
+}
+
+div#showDuoInfoContainer div.showDuoInfo strong {
+  color: #FFFFFF;
+  display: block;
+}
+
+div#showDuoInfoContainer div.showDuoCancel {
+  background-color: rgb(113 113 122 / var(--bg-opacity));
+  border-radius: 4px;
+  margin-top: 20px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div#showDuoInfoContainer div.showDuoCancel:hover {
+  background-color: rgb(82 82 91 / var(--bg-opacity)); 
+  font-weight: 600;
+}

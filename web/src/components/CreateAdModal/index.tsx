@@ -59,9 +59,9 @@ function CreateAdModal() {
 
   return (
     <Dialog.Portal>
-      <Dialog.Overlay className='createAdModalOverlay' />
+      <Dialog.Overlay className='dialogModalOverlay' />
 
-      <Dialog.Content className='createAdModalContent'>
+      <Dialog.Content className='dialogModalContent createAdModalContent'>
         <Dialog.Title className='createAdModalTitle'>Publique um anúncio</Dialog.Title>
 
         <form onSubmit={handleCreateAd}>

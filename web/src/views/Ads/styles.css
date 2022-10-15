@@ -53,9 +53,10 @@ div#adsViewContainer h1 span {
 }
 
 div#adsViewContainer div#adsListedByGame {
-  margin-top: 60px;
+  margin: 60px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 div#adsViewContainer div.adByGame {
@@ -90,7 +91,7 @@ div#adsViewContainer div.adByGame strong.noVoiceChannel {
   color: #F87171;
 }
 
-div#adsListedByGame div.adByGame button {
+div#adsListedByGame div.adByGame div.conectDuo {
   background: #8B5CF6;
   color: #FFFFFF;
   font-size: 16px;
@@ -106,6 +107,6 @@ div#adsListedByGame div.adByGame button {
   gap: 15px;
 }
 
-div#adsListedByGame div.adByGame button:hover {
+div#adsListedByGame div.adByGame div.conectDuo:hover {
   background: rgb(137 90 246 / 0.7);
 }

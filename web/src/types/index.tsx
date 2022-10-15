@@ -23,6 +23,10 @@ export interface DaysOfWeekProps {
   title: string;
 };
 
+export interface DiscordProps {
+  discord: string;
+};
+
 export interface GameProps {
   id: string;
   title: string;
@@ -39,3 +43,8 @@ export interface GameBannerProps {
 };
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> { };
+
+export interface ShowDuoProps {
+  name: string;
+  adId: string;
+};

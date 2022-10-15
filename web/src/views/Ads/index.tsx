@@ -5,6 +5,9 @@ import { Axios } from '../../utils/Api';
 /* Dependencies */
 import { GameController } from 'phosphor-react';
 import { useParams } from "react-router-dom";
+import * as Dialog from '@radix-ui/react-dialog';
+/* Components */
+import ShowDuo from '../../components/ShowDuo';
 /* Types */
 import { AdsProps, GameProps } from '../../types';
 /* Images */
@@ -63,7 +66,7 @@ function Ads() {
         {
           ads.map((ad) => {
             return (
-              <div className='adByGame'>
+              <div className='adByGame' key={ad.id}>
                 <div>
                   <span>Nome</span>
                   <strong>{ad.name}</strong>
@@ -88,10 +91,19 @@ function Ads() {
                   </strong>
                 </div>
 
-                <button>
-                  <GameController size={20} />
-                  Conectar
-                </button>
+                <Dialog.Root>
+                  <Dialog.Trigger>
+                    <div className='conectDuo'>
+                      <GameController size={20} />
+                      Conectar
+                    </div>
+                  </Dialog.Trigger>
+
+                  <ShowDuo
+                    name={ad.name}
+                    adId={ad.id}
+                  />
+                </Dialog.Root>
               </div>
             )
           })
