@@ -1,6 +1,9 @@
+/* React Native */
 import { View, ActivityIndicator } from 'react-native';
-import { styles } from './styles';
+/* Theme */
 import { THEME } from '../../theme';
+/* Styles */
+import { styles } from './styles';
 
 export function Loading() {
   return (
