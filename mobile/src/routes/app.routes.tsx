@@ -1,4 +1,6 @@
+/* Dependencies */
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+/* Views */
 import { Home } from '../screens/Home';
 import { Game } from '../screens/Game';
 
