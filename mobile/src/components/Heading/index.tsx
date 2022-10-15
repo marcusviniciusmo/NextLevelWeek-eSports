@@ -1,10 +1,9 @@
-import { View, Text, ViewProps } from 'react-native';
+/* React Native */
+import { View, Text } from 'react-native';
+/* Types */
+import { HeadingProps } from '../../types';
+/* Styles */
 import { styles } from './styles';
-
-interface HeadingProps extends ViewProps {
-  title: string;
-  subtitle: string;
-};
 
 export function Heading({ title, subtitle, ...rest}: HeadingProps) {
   return (

@@ -1,3 +1,5 @@
+import { ViewProps } from 'react-native';
+
 export interface DuoCardProps {
   id: string;
   hourEnd: string;
@@ -15,4 +17,9 @@ export interface GameCardProps {
   _count: {
     ads: number;
   };
+};
+
+export interface HeadingProps extends ViewProps {
+  title: string;
+  subtitle: string;
 };
